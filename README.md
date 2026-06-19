@@ -41,3 +41,13 @@ Telegram-бот для приема заявок от клиентов.
 
 ```powershell
 python -m venv .venv
+
+## Скриншоты
+
+### Диалог клиента с ботом
+
+![Client flow](screenshots/client-flow.png)
+
+### Уведомление администратору
+
+![Admin notification](screenshots/admin-notification.png)
