@@ -6,21 +6,21 @@ Telegram-бот для приема заявок от клиентов.
 
 ## Что умеет бот
 
-- Принимает заявку через Telegram
-- Спрашивает имя клиента
-- Спрашивает номер телефона
-- Позволяет выбрать услугу или товар
-- Принимает комментарий
-- Сохраняет заявку в SQLite
-- Отправляет уведомление администратору в Telegram
+* Принимает заявку через Telegram
+* Спрашивает имя клиента
+* Спрашивает номер телефона
+* Позволяет выбрать услугу или товар
+* Принимает комментарий
+* Сохраняет заявку в SQLite
+* Отправляет уведомление администратору в Telegram
 
 ## Стек
 
-- Python
-- aiogram
-- SQLite
-- python-dotenv
-- Telegram Bot API
+* Python
+* aiogram
+* SQLite
+* python-dotenv
+* Telegram Bot API
 
 ## Как работает
 
@@ -41,6 +41,33 @@ Telegram-бот для приема заявок от клиентов.
 
 ```powershell
 python -m venv .venv
+```
+
+Активировать окружение:
+
+```powershell
+.venv\Scripts\activate
+```
+
+Установить зависимости:
+
+```powershell
+pip install -r requirements.txt
+```
+
+Создать файл `.env`:
+
+```env
+BOT_TOKEN=PASTE_YOUR_BOT_TOKEN_HERE
+ADMIN_ID=YOUR_TELEGRAM_ID
+DATABASE_PATH=leads.db
+```
+
+Запустить бота:
+
+```powershell
+python main.py
+```
 
 ## Скриншоты
 
@@ -51,3 +78,16 @@ python -m venv .venv
 ### Уведомление администратору
 
 ![Admin notification](screenshots/admin-notification.png)
+
+## Важно
+
+Файл `.env` нельзя публиковать в GitHub, потому что там находится токен Telegram-бота.
+
+## Возможные доработки
+
+* Google Sheets integration
+* Laravel admin panel
+* Flutter mobile app
+* Email notifications
+* CRM dashboard
+* Export to Excel
