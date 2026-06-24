@@ -9,6 +9,7 @@ from aiogram.types import Message, ReplyKeyboardRemove
 
 from config import load_config
 from database import init_db, save_lead
+from google_sheets import try_append_lead_to_google_sheets
 from keyboards import phone_keyboard, services_keyboard
 from states import LeadForm
 
@@ -131,6 +132,14 @@ async def comment_handler(message: Message, state: FSMContext, bot: Bot) -> None
         database_path=config.database_path,
         telegram_user_id=telegram_user_id,
         telegram_username=telegram_username,
+        name=data["name"],
+        phone=data["phone"],
+        service=data["service"],
+        comment=comment,
+    )
+
+    try_append_lead_to_google_sheets(
+        config=config,
         name=data["name"],
         phone=data["phone"],
         service=data["service"],
